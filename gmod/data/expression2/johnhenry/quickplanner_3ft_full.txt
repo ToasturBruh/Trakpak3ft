@@ -22,7 +22,7 @@ if(first()){
     
     #Piece Specs
     StraightLengths = array(32,48,64,96,128,192,256,384,512,768,1024,1536,2048,3072,4096,6144,8192) #The straights that will be made; also switches will borrow from this list for their straight portions.
-    ArcRadii = array(2048,3072,4096,6144,8192)#1024,2048,3072,4096,6144,8192 #The principal (non-double tracked) curve radii.
+    ArcRadii = array(1024,2048,3072,4096)#1024,2048,3072,4096,6144,8192 #The principal (non-double tracked) curve radii.
     SegLimits = array(32,40,48,56,64) #The Max number of segments for a 90 degree curve for each principal radius.
     ArcStartDirs =  array(0,0,0,0) #Starting direction for arc curves. Lines up with ArcEndDirs. All curves will be mirrored (negative numbers).
     ArcEndDirs =    array(1,2,4,8) #Ending direction for arc curves. Lines up with ArcStartDirs. All curves will be mirrored (negative numbers).
@@ -34,7 +34,7 @@ if(first()){
     
     #Multi Track/Track Geometry
     BallastTopWidth = 112 #Used to make sure track pieces don't intersect in the wrong places
-    DTS = 128 #Double Track Separation
+    DTS = 144 #Double Track Separation
     NumParallelTracks = 2 #2 to generate double track, 3 for triple track, 4 for quad track, etc. Numbers >2 may take a VERY long time!
     
     #Settings
