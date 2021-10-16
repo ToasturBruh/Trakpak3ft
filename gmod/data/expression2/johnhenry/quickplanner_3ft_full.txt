@@ -17,12 +17,12 @@ if(first()){
     
     #<Description line (optional)>
     
-    Subfolder = "3ft" #subfolder (relative to johnhenry_saves/dockets) to place dockets into.
+    Subfolder = "3ft_full" #subfolder (relative to johnhenry_saves/dockets) to place dockets into.
     #If you simply want to compile straight to the johnhenry_saves/dockets/ folder, leave this empty.
     
     #Piece Specs
     StraightLengths = array(32,48,64,96,128,192,256,384,512,768,1024,1536,2048,3072,4096,6144,8192) #The straights that will be made; also switches will borrow from this list for their straight portions.
-    ArcRadii = array(1024)#1024,2048,3072,4096,6144,8192 #The principal (non-double tracked) curve radii.
+    ArcRadii = array(2048,3072,4096,6144,8192)#1024,2048,3072,4096,6144,8192 #The principal (non-double tracked) curve radii.
     SegLimits = array(32,40,48,56,64) #The Max number of segments for a 90 degree curve for each principal radius.
     ArcStartDirs =  array(0,0,0,0) #Starting direction for arc curves. Lines up with ArcEndDirs. All curves will be mirrored (negative numbers).
     ArcEndDirs =    array(1,2,4,8) #Ending direction for arc curves. Lines up with ArcStartDirs. All curves will be mirrored (negative numbers).
