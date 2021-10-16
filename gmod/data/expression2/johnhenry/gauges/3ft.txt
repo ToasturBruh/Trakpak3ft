@@ -3,6 +3,8 @@
 #Big Important Stuff
 #-------------------
 
+#Config by Toastur
+
 GaugeName = "3ft" #Short abbreviation for the gauge, used for auto-naming.
 Scale = 1 #Overall scale factor for brush generation. Model will be scaled back down in the QC. Should be a power of two (1, 2, 4, etc).
 # !!! Be careful about using large numbers with large track pieces. An 8192-radius 90 degree curve at 2x scale will go off the hammer grid !!!
