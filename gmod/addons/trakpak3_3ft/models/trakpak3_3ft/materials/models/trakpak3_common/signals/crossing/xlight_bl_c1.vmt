@@ -1,7 +1,0 @@
-"UnlitGeneric"
-{
-	"$model" "1"
-	"$basetexture" "trakpak3_common/signals/crossing/xlight_bl_on"
-	"$surfaceprop" "Glass"
-	//"$selfillum" "1"
-}
