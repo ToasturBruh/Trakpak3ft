@@ -13,6 +13,8 @@
 @trigger 
 
 if(first()){
+    #Version 1.1 - Anything without this version line is Version 1.0
+
     #Config by Toastur
     
     #<Description line (optional)>
@@ -21,7 +23,7 @@ if(first()){
     #If you simply want to compile straight to the johnhenry_saves/dockets/ folder, leave this empty.
     
     #Piece Specs
-    StraightLengths = array(32,48,64,96,128,192,256,384,512,768,1024,1536,2048,3072,4096,6144,8192) #The straights that will be made; also switches will borrow from this list for their straight portions.
+    StraightLengths = array(32,48,64,96,128,192,256,384,512,768,1024,1536,2048,3072,4096) #The straights that will be made; also switches will borrow from this list for their straight portions.
     ArcRadii = array(1024,2048,3072,4096)#1024,2048,3072,4096,6144,8192 #The principal (non-double tracked) curve radii.
     SegLimits = array(32,40,48,56,64) #The Max number of segments for a 90 degree curve for each principal radius.
     ArcStartDirs =  array(0,0,0,0) #Starting direction for arc curves. Lines up with ArcEndDirs. All curves will be mirrored (negative numbers).
@@ -30,7 +32,7 @@ if(first()){
     TurnoutStartDirs =  array(0,0,0,1,2,4) #Starting direction for turnouts. Lines up with TurnoutEndDirs. All switches will be mirrored (negative numbers).
     TurnoutEndDirs =    array(1,2,4,0,0,0) #Ending direction for turnouts. Lines up with TurnoutStartDirs. All switches will be mirrored (negative numbers).
     WyeDirs = array(1,2,4) #Ending Direction for Wyes.
-    Slopes = array(0,2/128,3/128,4/128) #List of Slopes (Rise/Run) for straights and curves. Negatives will also be made (except for 0 of course).
+    Slopes = array(0,2/128,3/128,4/128,5/128,6/128) #List of Slopes (Rise/Run) for straights and curves. Negatives will also be made (except for 0 of course).
     
     #Multi Track/Track Geometry
     BallastTopWidth = 112 #Used to make sure track pieces don't intersect in the wrong places
@@ -829,8 +831,11 @@ if(first()){
             }
         }
         
+        #Find distance from ArcStart to Frog
+        local FrogDist = sqrt( (Radius + TrackGauge/2)^2 - (Radius - TrackGauge/2)^2 )
+        
         #Find Minimum Straight Length (to start of arc) snapped to grid
-        MinLen = 4*ArcStartW:length()/(StartDirU:length())
+        MinLen = FrogDist + ArcStartW:length()/(StartDirU:length()) + 64 #64 is safety factor
     
         LengthIndex = 1
         for(N=1,StraightLengths:count()){
@@ -868,8 +873,11 @@ if(first()){
         local ArcStartW = Isect + ArcStart
         local ArcEndW = Isect + ArcEnd
         
+        #Find distance from ArcStart to Frog
+        local FrogDist = sqrt( (Radius + TrackGauge/2)^2 - (Radius - TrackGauge/2)^2 )
+        
         #Find Minimum Straight Length (to start of arc) snapped to grid
-        MinLen = 4*ArcStartW:length()/(StartDirU:length())
+        MinLen = FrogDist + ArcStartW:length()/(StartDirU:length()) + 64 #64 is safety factor
     
         LengthIndex = 1
         for(N=1,StraightLengths:count()){
