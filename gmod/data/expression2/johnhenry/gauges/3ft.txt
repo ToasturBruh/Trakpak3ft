@@ -6,7 +6,7 @@
 #Config by Toastur
 
 GaugeName = "3ft" #Short abbreviation for the gauge, used for auto-naming.
-Scale = 1 #Overall scale factor for brush generation. Model will be scaled back down in the QC. Should be a power of two (1, 2, 4, etc).
+Scale = 2 #Overall scale factor for brush generation. Model will be scaled back down in the QC. Should be a power of two (1, 2, 4, etc).
 # !!! Be careful about using large numbers with large track pieces. An 8192-radius 90 degree curve at 2x scale will go off the hammer grid !!!
 RidiculousTies = 3 #Changes how ties and roadbed are handled. Note that switches will use whatever they need to in order to look correct.
 #0 - Composite Textures: Uses one texture for the roadbed and ties. Cheapest option but limits the number of skins.
@@ -209,7 +209,7 @@ Mat_RailTop_Rusty = "TRAKPAK3_COMMON/TRACKS/RAILS/RAIL_TOP_RUSTY"
 #U is the width of the texture, V is the height
 #Scale is the texture scale that will be applied in hammer (Overall Scale will auto-compensate this)
 BallastU = 512*(3/5)
-BallastV = 512
+BallastV = 512*(3/5)
 BallastScale = 0.25
 RailSideU = 512
 RailSideV = 32
